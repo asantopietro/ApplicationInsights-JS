@@ -387,7 +387,6 @@ module Microsoft.ApplicationInsights {
             var xhr = new XMLHttpRequest();
             xhr[AjaxMonitor.DisabledPropertyName] = true;
             xhr.open("POST", this._config.endpointUrl(), isAsync);
-            xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = () => this._xhrReadyStateChange(xhr, payload, payload.length);
             xhr.onerror = (event: ErrorEvent) => this._onError(payload, this._formatErrorMessageXhr(xhr), event);
 
